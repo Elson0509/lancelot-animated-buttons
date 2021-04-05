@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import classes from './LancelotEllipsisButton.module.css'
 import {StyleSheet, css} from 'aphrodite/no-important'
-import {makeid} from '../../utils/functions'
 
 const LancelotEllipsisButton = (props) => {
     const [checked, setChecked] = useState(props.checked || false)
-    const elementId = makeid(15)
     const standardBackground = '#fff'
     const standardPointer = 'pointer'
     const ellipsisStandardColor = 'black'
