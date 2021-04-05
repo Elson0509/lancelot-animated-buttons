@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import classes from './LancelotEllipsisButton.module.css'
 import {StyleSheet, css} from 'aphrodite/no-important'
+import {makeid} from '../../utils/functions'
 
 const LancelotEllipsisButton = (props) => {
-    const [checked, setChecked] = useState(false)
-
+    const [checked, setChecked] = useState(props.checked || false)
+    const elementId = makeid(15)
     const standardBackground = '#fff'
     const standardPointer = 'pointer'
     const ellipsisStandardColor = 'black'
@@ -138,7 +139,7 @@ const LancelotEllipsisButton = (props) => {
         },
         ellipsis:{
             background: checked ? props.crossColor || crossStandardColor : props.ellipsisColor || ellipsisStandardColor ,
-            width: buttonSize[props.buttonSize]?.ellipsisSize || standardButtonSize.ellipsisSize,
+            width: checked ? '3px' : buttonSize[props.buttonSize]?.ellipsisSize || standardButtonSize.ellipsisSize,
             height: checked ? buttonSize[props.buttonSize]?.crossHeight || standardButtonSize.crossHeight : buttonSize[props.buttonSize]?.ellipsisSize || standardButtonSize.ellipsisSize,
             top: checked ? buttonSize[props.buttonSize]?.crossTop || standardButtonSize.crossTop : buttonSize[props.buttonSize]?.ellipsisTopLeft || standardButtonSize.ellipsisTopLeft,
             left: checked ? buttonSize[props.buttonSize]?.crossLeft || standardButtonSize.crossLeft : buttonSize[props.buttonSize]?.ellipsisTopLeft || standardButtonSize.ellipsisTopLeft,
@@ -146,11 +147,13 @@ const LancelotEllipsisButton = (props) => {
             transition: `${props.animationTime || animationStandardTime}s ease-in-out`,
             ':after':{
                 background: checked ? props.crossColor || crossStandardColor : props.ellipsisColor || ellipsisStandardColor,
-                bottom: buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition
+                bottom: checked ? 0 : buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition,
+                transform: 'rotate(90deg)'
             },
             ':before':{
                 background: checked ? props.crossColor || crossStandardColor : props.ellipsisColor || ellipsisStandardColor,
-                top: buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition
+                top: checked ? 0 : buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition,
+                transform: 'rotate(90deg)'
             },
         }
     })
@@ -162,16 +165,10 @@ const LancelotEllipsisButton = (props) => {
     }
 
     return (
-        <span>
-            <input id={props.nameid ? props.nameid : "menu-ellipsis"} className={classes.Menu_ellipsis} type="checkbox" />
-            <label htmlFor={props.nameid ? props.nameid : "menu-ellipsis"}>
-                <div className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHover && styles.hoverEffect)].join(' ')} onClick={clickHandler}>
-                    <span className={[classes.Ellipsis, css(styles.ellipsis)].join(' ')}></span>
-                </div>
-            </label>
-        </span>
-    );
-
-};
+        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHover && styles.hoverEffect)].join(' ')}>
+            <span className={[classes.Ellipsis, css(styles.ellipsis)].join(' ')}></span>
+        </div>
+    )
+}
 
 export default LancelotEllipsisButton;

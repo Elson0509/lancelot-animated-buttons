@@ -2,10 +2,6 @@
     border-radius: 50%;
 }
 
-.Menu_ellipsis{
-    display: none;
-}
-
 .Ellipsis{
     display: block;
     position: relative;
@@ -21,16 +17,4 @@
     height: 100%;
     position: absolute;
     transition: .75s ease-in-out;
-}
-
-.Menu_ellipsis:checked ~ label .Ellipsis{
-    width: 3px;
-}
-.Menu_ellipsis:checked ~ label .Ellipsis:before{
-    transform: rotate(90deg);
-    top: 0;
-}
-.Menu_ellipsis:checked ~ label .Ellipsis:after{
-    transform: rotate(90deg);
-    bottom: 0;
 }
