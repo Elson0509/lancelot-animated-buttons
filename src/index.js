@@ -8,11 +8,11 @@ export const ExampleComponent = ({ text }) => {
       <LancelotEllipsisButton 
         background="#012105" 
         ellipsisColor="white" 
-        hoverEffectTime="1"
-        rotationIntensity='5x'
-        animationTime={.5}
-        buttonSize='5x'
-        checked={true}
+        hoverEffectTime={.3}
+        rotationIntensity='7x'
+        animationTime={2.5}
+        buttonSize='4x'
+        checked={false}
         crossColor="#a12389"/>
       
       <div className={styles.test}>Example Component: {text}</div>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import classes from './LancelotEllipsisButton.module.css'
 import {StyleSheet, css} from 'aphrodite/no-important'
+import PropTypes from 'prop-types';
 
 const LancelotEllipsisButton = (props) => {
     const [checked, setChecked] = useState(props.checked || false)
@@ -167,6 +168,17 @@ const LancelotEllipsisButton = (props) => {
             <span className={[classes.Ellipsis, css(styles.ellipsis)].join(' ')}></span>
         </div>
     )
+}
+
+LancelotEllipsisButton.propTypes = {
+    animationTime: PropTypes.number,
+    background: PropTypes.string,
+    buttonSize: PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+    checked: PropTypes.bool,
+    crossColor: PropTypes.string,
+    cursor: PropTypes.string,
+    hoverEffectTime: PropTypes.number,
+    rotationIntensity: PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
 }
 
 export default LancelotEllipsisButton;
