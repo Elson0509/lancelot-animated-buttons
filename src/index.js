@@ -13,6 +13,7 @@ export const ExampleComponent = ({ text }) => {
         animationTime={.5}
         
         crossColor="#a12389"/>
+      
       <div className={styles.test}>Example Component: {text}</div>
     </>
   )
