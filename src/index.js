@@ -11,7 +11,7 @@ export const ExampleComponent = ({ text }) => {
         hoverEffectTime="1"
         rotationIntensity='5x'
         animationTime={.5}
-        
+        buttonSize='3x'
         crossColor="#a12389"/>
       
       <div className={styles.test}>Example Component: {text}</div>
