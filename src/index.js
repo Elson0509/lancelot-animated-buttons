@@ -5,7 +5,14 @@ import LancelotHamburguerButton from './components/AnimatedHamburguerButton/Lanc
 export const ExampleComponent = ({ text }) => {
   return (
     <div style={{background:'#e1232a'}}>
-      <LancelotHamburguerButton/>
+      <LancelotHamburguerButton 
+        rotationIntensity={3}
+        animationTime={.4}
+        buttonSize={3} 
+        background='#e1232a'
+        crossColor='white'
+        hamburguerColor='white'
+         />
     </div>
   )
 }

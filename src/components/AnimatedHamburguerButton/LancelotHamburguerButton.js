@@ -12,12 +12,22 @@ const LancelotHamburguerButton = (props) => {
     const crossStandardColor = 'red'
     const animationStandardTime = '.5'
 
-    const rotationStandardIntensity = 0
+    const rotationStandardIntensity = 1
 
     const buttonSize = {
-        '2x':{
+        1:{
+            size: '30px',
+            hamburguerWidth: '16px',
+            hamburguerHeight: '2px',
+            hamburguerTop: '15px',
+            hamburguerLeft: '7px',
+            hamburguerBeforeAfterPosition: '-7px',
+            crossHeight: '22px',
+            crossTop: '4px',
+            crossLeft: '14px',
+        },
+        2:{
             size: '40px',
-            hamburguerSize: '5px',
             hamburguerWidth: '22px',
             hamburguerHeight: '3px',
             hamburguerTop: '18px',
@@ -26,10 +36,98 @@ const LancelotHamburguerButton = (props) => {
             crossHeight: '25px',
             crossTop: '8px',
             crossLeft: '18px',
-        }
+        },
+        3:{
+            size: '50px',
+            hamburguerWidth: '28px',
+            hamburguerHeight: '4px',
+            hamburguerTop: '23px',
+            hamburguerLeft: '12px',
+            hamburguerBeforeAfterPosition: '-10px',
+            crossHeight: '30px',
+            crossTop: '11px',
+            crossLeft: '24px',
+        },
+        4:{
+            size: '50px',
+            hamburguerWidth: '30px',
+            hamburguerHeight: '4px',
+            hamburguerTop: '23px',
+            hamburguerLeft: '11px',
+            hamburguerBeforeAfterPosition: '-12px',
+            crossHeight: '33px',
+            crossTop: '10px',
+            crossLeft: '24px',
+        },
+        5:{
+            size: '60px',
+            hamburguerWidth: '32px',
+            hamburguerHeight: '4px',
+            hamburguerTop: '28px',
+            hamburguerLeft: '15px',
+            hamburguerBeforeAfterPosition: '-13px',
+            crossHeight: '36px',
+            crossTop: '12px',
+            crossLeft: '28px',
+        },
+        6:{
+            size: '70px',
+            hamburguerWidth: '34px',
+            hamburguerHeight: '5px',
+            hamburguerTop: '32px',
+            hamburguerLeft: '18px',
+            hamburguerBeforeAfterPosition: '-15px',
+            crossHeight: '38px',
+            crossTop: '14px',
+            crossLeft: '34px',
+        },
+        7:{
+            size: '80px',
+            hamburguerWidth: '36px',
+            hamburguerHeight: '5px',
+            hamburguerTop: '36px',
+            hamburguerLeft: '22px',
+            hamburguerBeforeAfterPosition: '-16px',
+            crossHeight: '42px',
+            crossTop: '17px',
+            crossLeft: '38px',
+        },
+        8:{
+            size: '90px',
+            hamburguerWidth: '40px',
+            hamburguerHeight: '5px',
+            hamburguerTop: '42px',
+            hamburguerLeft: '26px',
+            hamburguerBeforeAfterPosition: '-18px',
+            crossHeight: '48px',
+            crossTop: '21px',
+            crossLeft: '44px',
+        },
+        9:{
+            size: '100px',
+            hamburguerWidth: '46px',
+            hamburguerHeight: '6px',
+            hamburguerTop: '46px',
+            hamburguerLeft: '28px',
+            hamburguerBeforeAfterPosition: '-20px',
+            crossHeight: '54px',
+            crossTop: '22px',
+            crossLeft: '49px',
+        },
+        10:{
+            size: '110px',
+            hamburguerWidth: '50px',
+            hamburguerHeight: '6px',
+            hamburguerTop: '52px',
+            hamburguerLeft: '32px',
+            hamburguerBeforeAfterPosition: '-22px',
+            crossHeight: '60px',
+            crossTop: '24px',
+            crossLeft: '55px',
+        },
     }
 
-    const standardButtonSize = buttonSize['2x']
+    const standardButtonSize = buttonSize[3]
 
     const styles = StyleSheet.create({
         background:{
@@ -53,7 +151,7 @@ const LancelotHamburguerButton = (props) => {
             height: checked ? buttonSize[props.buttonSize]?.crossHeight || standardButtonSize.crossHeight : buttonSize[props.buttonSize]?.hamburguerHeight || standardButtonSize.hamburguerHeight,
             top: checked ? buttonSize[props.buttonSize]?.crossTop || standardButtonSize.crossTop : buttonSize[props.buttonSize]?.hamburguerTop || standardButtonSize.hamburguerTop,
             left: checked ? buttonSize[props.buttonSize]?.crossLeft || standardButtonSize.crossLeft : buttonSize[props.buttonSize]?.hamburguerLeft || standardButtonSize.hamburguerLeft,
-            transform: checked ? `rotate(${45 + 180 * (props.rotationIntensity || rotationStandardIntensity)}deg)` : '',
+            transform: checked ? `rotate(${45 + 180 * ((props.rotationIntensity || rotationStandardIntensity) - 1)}deg)` : '',
             transition: `${props.animationTime || animationStandardTime}s ease-in-out`,
             ':after':{
                 background: checked ? props.crossColor || crossStandardColor : props.hamburguerColor || hamburguerStandardColor,
@@ -62,7 +160,7 @@ const LancelotHamburguerButton = (props) => {
             ':before':{
                 background: checked ? props.crossColor || crossStandardColor : props.hamburguerColor || hamburguerStandardColor,
                 top: checked ? 0 : buttonSize[props.buttonSize]?.hamburguerBeforeAfterPosition || standardButtonSize.hamburguerBeforeAfterPosition,
-                transform: checked ? `rotate(${-90 - 180 * (props.rotationIntensity || rotationStandardIntensity)}deg)` : '',
+                transform: checked ? `rotate(${-90 - 180 * ((props.rotationIntensity || rotationStandardIntensity) - 1)}deg)` : '',
             },
         }
     })
@@ -74,7 +172,7 @@ const LancelotHamburguerButton = (props) => {
     }
 
     return (
-        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHover && styles.hoverEffect)].join(' ')}>
+        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
             <span className={[classes.Hamburguer, css(styles.hamburguer)].join(' ')}></span>
         </div>
     )
@@ -83,12 +181,15 @@ const LancelotHamburguerButton = (props) => {
 LancelotHamburguerButton.propTypes = {
     animationTime: PropTypes.number,
     background: PropTypes.string,
-    buttonSize: PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+    buttonSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
     checked: PropTypes.bool,
+    clicked: PropTypes.func,
     crossColor: PropTypes.string,
     cursor: PropTypes.string,
+    disableHoverEffect: PropTypes.bool,
+    hamburguerColor: PropTypes.string,
     hoverEffectTime: PropTypes.number,
-    rotationIntensity: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    rotationIntensity: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
 }
 
 export default LancelotHamburguerButton;

@@ -12,21 +12,21 @@ const LancelotEllipsisButton = (props) => {
     const crossStandardColor = 'red'
     const animationStandardTime = '.5'
     const rotationIntensity = {
-        '1x':45,
-        '2x':135,
-        '3x':225,
-        '4x':315,
-        '5x':405,
-        '6x':495,
-        '7x':585,
-        '8x':675,
-        '9x':855,
-        '10x':945,
+        1:45,
+        2:135,
+        3:225,
+        4:315,
+        5:405,
+        6:495,
+        7:585,
+        8:675,
+        9:855,
+        10:945,
     }
-    const rotationStandardIntensity = rotationIntensity['5x']
+    const rotationStandardIntensity = rotationIntensity[5]
 
     const buttonSize = {
-        '1x':{
+        1:{
             size: '30px',
             ellipsisSize: '4px',
             ellipsisTopLeft: '13.5px',
@@ -35,7 +35,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '5px',
             crossLeft: '14px',
         },
-        '2x':{
+        2:{
             size: '40px',
             ellipsisSize: '5px',
             ellipsisTopLeft: '18px',
@@ -44,7 +44,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '8px',
             crossLeft: '18px',
         },
-        '3x':{
+        3:{
             size: '50px',
             ellipsisSize: '7px',
             ellipsisTopLeft: '22px',
@@ -53,7 +53,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '10px',
             crossLeft: '25px',
         },
-        '4x':{
+        4:{
             size: '60px',
             ellipsisSize: '7px',
             ellipsisTopLeft: '27px',
@@ -62,7 +62,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '12px',
             crossLeft: '29px',
         },
-        '5x':{
+        5:{
             size: '70px',
             ellipsisSize: '7px',
             ellipsisTopLeft: '33px',
@@ -71,7 +71,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '14px',
             crossLeft: '35px',
         },
-        '6x':{
+        6:{
             size: '80px',
             ellipsisSize: '8px',
             ellipsisTopLeft: '37px',
@@ -80,7 +80,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '17px',
             crossLeft: '40px',
         },
-        '7x':{
+        7:{
             size: '90px',
             ellipsisSize: '8px',
             ellipsisTopLeft: '42px',
@@ -89,7 +89,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '20px',
             crossLeft: '45px',
         },
-        '8x':{
+        8:{
             size: '100px',
             ellipsisSize: '9px',
             ellipsisTopLeft: '48px',
@@ -98,7 +98,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '23px',
             crossLeft: '50px',
         },
-        '9x':{
+        9:{
             size: '110px',
             ellipsisSize: '9px',
             ellipsisTopLeft: '52px',
@@ -107,7 +107,7 @@ const LancelotEllipsisButton = (props) => {
             crossTop: '26px',
             crossLeft: '55px',
         },
-        '10x':{
+        10:{
             size: '120px',
             ellipsisSize: '9px',
             ellipsisTopLeft: '56px',
@@ -118,7 +118,7 @@ const LancelotEllipsisButton = (props) => {
         },
     }
 
-    const standardButtonSize = buttonSize['3x']
+    const standardButtonSize = buttonSize[3]
 
     const styles = StyleSheet.create({
         background:{
@@ -164,7 +164,7 @@ const LancelotEllipsisButton = (props) => {
     }
 
     return (
-        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHover && styles.hoverEffect)].join(' ')}>
+        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
             <span className={[classes.Ellipsis, css(styles.ellipsis)].join(' ')}></span>
         </div>
     )
@@ -173,12 +173,15 @@ const LancelotEllipsisButton = (props) => {
 LancelotEllipsisButton.propTypes = {
     animationTime: PropTypes.number,
     background: PropTypes.string,
-    buttonSize: PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+    buttonSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
     checked: PropTypes.bool,
+    clicked: PropTypes.func,
     crossColor: PropTypes.string,
     cursor: PropTypes.string,
+    disableHoverEffect: PropTypes.bool,
+    ellipsisColor: PropTypes.string,
     hoverEffectTime: PropTypes.number,
-    rotationIntensity: PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+    rotationIntensity: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
 }
 
 export default LancelotEllipsisButton;
