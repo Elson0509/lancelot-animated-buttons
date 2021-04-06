@@ -6,12 +6,13 @@ export const ExampleComponent = ({ text }) => {
   return (
     <div style={{background:'#e1232a'}}>
       <LancelotHamburguerButton 
-        rotationIntensity={3}
-        animationTime={.4}
-        buttonSize={3} 
+        rotationIntensity={1}
+        buttonSize={5} 
         background='#e1232a'
         crossColor='white'
+        disableHoverEffect
         hamburguerColor='white'
+        animationTime={1}
          />
     </div>
   )

@@ -1,10 +1,11 @@
 {
-  "name": "lancelot-animated-buttoms",
+  "name": "lancelot-animated-buttons",
   "version": "1.0.0",
-  "description": "Animated buttoms for React.js",
+  "description": "Animated buttons for React.js",
   "author": "Elson Ramos",
   "license": "MIT",
-  "repository": "Elson Ramos/lancelot-animated-buttoms",
+  "key":["animated","buttons","react.js","ellipsis","hamburguer"],
+  "repository": "elson_ramos/lancelot-animated-buttons",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -53,7 +54,6 @@
   ],
   "dependencies": {
     "aphrodite": "^2.4.0",
-    "prop-types": "^15.7.2",
-    "radium": "^0.26.1"
+    "prop-types": "^15.7.2"
   }
 }
