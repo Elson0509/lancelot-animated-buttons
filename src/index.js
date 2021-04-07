@@ -4,16 +4,17 @@ import LancelotHamburguerButton from './components/AnimatedHamburguerButton/Lanc
 
 export const ExampleComponent = ({ text }) => {
   return (
-    <div style={{background:'#e1232a'}}>
-      <LancelotHamburguerButton 
-        rotationIntensity={1}
-        buttonSize={5} 
-        background='#e1232a'
-        crossColor='white'
+    <div style={{background:'black', padding:'80px'}}>
+      <LancelotHamburguerButton
+        animationTime={2}
+        background="#ccc"
+        buttonSize={8}
+        clicked={()=>console.log("Lancelot!")}
+        crossColor="#238a0e"
         disableHoverEffect
-        hamburguerColor='white'
-        animationTime={1}
-         />
+        hamburguerColor="purple"
+        rotationIntensity={10}
+      />
     </div>
   )
 }

@@ -12,7 +12,7 @@ const LancelotHamburguerButton = (props) => {
     const crossStandardColor = 'red'
     const animationStandardTime = '.5'
 
-    const rotationStandardIntensity = 1
+    const rotationStandardIntensity = 3
 
     const buttonSize = {
         1:{

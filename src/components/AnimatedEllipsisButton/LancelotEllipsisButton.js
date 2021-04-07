@@ -23,7 +23,7 @@ const LancelotEllipsisButton = (props) => {
         9:855,
         10:945,
     }
-    const rotationStandardIntensity = rotationIntensity[5]
+    const rotationStandardIntensity = rotationIntensity[3]
 
     const buttonSize = {
         1:{
