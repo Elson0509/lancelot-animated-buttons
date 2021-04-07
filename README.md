@@ -25,7 +25,7 @@ const index = (props) => {
 }
 ```
 #### Result
-![](images/01.gif)
+![](https://github.com/Elson0509/lancelot-animated-buttons/blob/main/images/01.gif?raw=true)
 
 ### Customization
 The table below shows the properties to customize the button:
@@ -59,7 +59,7 @@ The table below shows the properties to customize the button:
 ```
 
 #### Result
-![](images/02.gif)
+![](https://github.com/Elson0509/lancelot-animated-buttons/blob/main/images/02.gif?raw=true)
 
 ### 2. Animated Hamburguer button
 
@@ -74,7 +74,7 @@ const index = (props) => {
 }
 ```
 #### Result
-![](images/03.gif)
+![](https://github.com/Elson0509/lancelot-animated-buttons/blob/main/images/03.gif?raw=true)
 
 ### Customization
 The table below shows the properties to customize the button:
@@ -108,7 +108,7 @@ The table below shows the properties to customize the button:
 ```
 
 #### Result
-![](images/04.gif)
+![](https://github.com/Elson0509/lancelot-animated-buttons/blob/main/images/04.gif?raw=true)
 
 ## License
 
