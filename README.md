@@ -25,7 +25,7 @@ const index = (props) => {
 }
 ```
 #### Result
-<img src="images/01.gif" alt="Lancelot Ellipsis Button"/>
+![](images/01.gif)
 
 ### Customization
 The table below shows the properties to customize the button:
@@ -59,7 +59,7 @@ The table below shows the properties to customize the button:
 ```
 
 #### Result
-<img src="images/02.gif" alt="Customized Lancelot Ellipsis Button"/>
+![](images/02.gif)
 
 ### 2. Animated Hamburguer button
 
@@ -74,7 +74,7 @@ const index = (props) => {
 }
 ```
 #### Result
-<img src="images/03.gif" alt="Lancelot Hamburguer Button"/>
+![](images/03.gif)
 
 ### Customization
 The table below shows the properties to customize the button:
@@ -108,7 +108,7 @@ The table below shows the properties to customize the button:
 ```
 
 #### Result
-<img src="images/04.gif" alt="Customized Lancelot Hamburguer Button"/>
+![](images/04.gif)
 
 ## License
 
