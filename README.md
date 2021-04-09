@@ -1,13 +1,13 @@
-# lancelot-animated-buttoms
+# lancelot-animated-buttons
 
 > Animated buttoms for React.js
 
-[![NPM](https://img.shields.io/npm/v/lancelot-animated-buttoms.svg)](https://www.npmjs.com/package/lancelot-animated-buttoms) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/lancelot-animated-buttons.svg)](https://www.npmjs.com/package/lancelot-animated-buttons) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save lancelot-animated-buttoms
+npm install --save lancelot-animated-buttons
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ npm install --save lancelot-animated-buttoms
 
 ```jsx
 import React from 'react'
-import {LancelotEllipsisButton} from 'lancelot-animated-buttoms'
+import {LancelotEllipsisButton} from 'lancelot-animated-buttons'
 
 const index = (props) => {
   return (
@@ -65,7 +65,7 @@ The table below shows the properties to customize the button:
 
 ```jsx
 import React from 'react'
-import {LancelotHamburguerButton} from 'lancelot-animated-buttoms'
+import {LancelotHamburguerButton} from 'lancelot-animated-buttons'
 
 const index = (props) => {
   return (

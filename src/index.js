@@ -6,6 +6,8 @@ export { default as LancelotHamburguerButton } from './components/AnimatedHambur
 
 export const ExampleComponent = ({ text }) => {
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }

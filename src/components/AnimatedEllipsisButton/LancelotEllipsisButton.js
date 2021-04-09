@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import classes from './LancelotEllipsisButton.module.css'
 import {StyleSheet, css} from 'aphrodite/no-important'
 import PropTypes from 'prop-types';
 
@@ -145,11 +144,25 @@ const LancelotEllipsisButton = (props) => {
             transform: checked ? `rotate(${rotationIntensity[props.rotationIntensity] || rotationStandardIntensity}deg)` : '',
             transition: `${props.animationTime || animationStandardTime}s ease-in-out`,
             ':after':{
+                display: 'block',
+                borderRadius: '20px',
+                content: `''`,
+                width: '100%',
+                height: '100%',
+                position: 'absolute',
+                transition: '.75s ease-in-out',
                 background: checked ? props.crossColor || crossStandardColor : props.ellipsisColor || ellipsisStandardColor,
                 bottom: checked ? 0 : buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition,
                 transform: 'rotate(90deg)'
             },
             ':before':{
+                display: 'block',
+                borderRadius: '20px',
+                content: `''`,
+                width: '100%',
+                height: '100%',
+                position: 'absolute',
+                transition: '.75s ease-in-out',
                 background: checked ? props.crossColor || crossStandardColor : props.ellipsisColor || ellipsisStandardColor,
                 top: checked ? 0 : buttonSize[props.buttonSize]?.ellipsisBeforeAfterPosition || standardButtonSize.ellipsisBeforeAfterPosition,
                 transform: 'rotate(90deg)'
@@ -164,8 +177,8 @@ const LancelotEllipsisButton = (props) => {
     }
 
     return (
-        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
-            <span className={[classes.Ellipsis, css(styles.ellipsis)].join(' ')}></span>
+        <div onClick={clickHandler} style={{borderRadius: "50%"}} className={[css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
+            <span style={{display: 'block', position: 'relative', borderRadius: '50%'}} className={[css(styles.ellipsis)].join(' ')}></span>
         </div>
     )
 }

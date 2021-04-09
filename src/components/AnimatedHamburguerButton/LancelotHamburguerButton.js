@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import classes from './LancelotHamburguerButton.module.css'
 import {StyleSheet, css} from 'aphrodite/no-important'
 import PropTypes from 'prop-types';
 
@@ -49,17 +48,6 @@ const LancelotHamburguerButton = (props) => {
             crossLeft: '24px',
         },
         4:{
-            size: '50px',
-            hamburguerWidth: '30px',
-            hamburguerHeight: '4px',
-            hamburguerTop: '23px',
-            hamburguerLeft: '11px',
-            hamburguerBeforeAfterPosition: '-12px',
-            crossHeight: '33px',
-            crossTop: '10px',
-            crossLeft: '24px',
-        },
-        5:{
             size: '60px',
             hamburguerWidth: '32px',
             hamburguerHeight: '4px',
@@ -70,7 +58,7 @@ const LancelotHamburguerButton = (props) => {
             crossTop: '12px',
             crossLeft: '28px',
         },
-        6:{
+        5:{
             size: '70px',
             hamburguerWidth: '34px',
             hamburguerHeight: '5px',
@@ -81,7 +69,7 @@ const LancelotHamburguerButton = (props) => {
             crossTop: '14px',
             crossLeft: '34px',
         },
-        7:{
+        6:{
             size: '80px',
             hamburguerWidth: '36px',
             hamburguerHeight: '5px',
@@ -92,7 +80,7 @@ const LancelotHamburguerButton = (props) => {
             crossTop: '17px',
             crossLeft: '38px',
         },
-        8:{
+        7:{
             size: '90px',
             hamburguerWidth: '40px',
             hamburguerHeight: '5px',
@@ -103,7 +91,7 @@ const LancelotHamburguerButton = (props) => {
             crossTop: '21px',
             crossLeft: '44px',
         },
-        9:{
+        8:{
             size: '100px',
             hamburguerWidth: '46px',
             hamburguerHeight: '6px',
@@ -114,7 +102,7 @@ const LancelotHamburguerButton = (props) => {
             crossTop: '22px',
             crossLeft: '49px',
         },
-        10:{
+        9:{
             size: '110px',
             hamburguerWidth: '50px',
             hamburguerHeight: '6px',
@@ -124,6 +112,17 @@ const LancelotHamburguerButton = (props) => {
             crossHeight: '60px',
             crossTop: '24px',
             crossLeft: '55px',
+        },
+        10:{
+            size: '120px',
+            hamburguerWidth: '55px',
+            hamburguerHeight: '6px',
+            hamburguerTop: '58px',
+            hamburguerLeft: '35px',
+            hamburguerBeforeAfterPosition: '-24px',
+            crossHeight: '64px',
+            crossTop: '28px',
+            crossLeft: '60px',
         },
     }
 
@@ -154,10 +153,22 @@ const LancelotHamburguerButton = (props) => {
             transform: checked ? `rotate(${45 + 180 * ((props.rotationIntensity || rotationStandardIntensity) - 1)}deg)` : '',
             transition: `${props.animationTime || animationStandardTime}s ease-in-out`,
             ':after':{
+                display: 'block',
+                content: `''`,
+                width: '100%',
+                height: '100%',
+                position: 'absolute',
+                transition: '.75s ease-in-out',
                 background: checked ? props.crossColor || crossStandardColor : props.hamburguerColor || hamburguerStandardColor,
                 bottom: checked ? 0 : buttonSize[props.buttonSize]?.hamburguerBeforeAfterPosition || standardButtonSize.hamburguerBeforeAfterPosition,
             },
             ':before':{
+                display: 'block',
+                content: `''`,
+                width: '100%',
+                height: '100%',
+                position: 'absolute',
+                transition: '.75s ease-in-out',
                 background: checked ? props.crossColor || crossStandardColor : props.hamburguerColor || hamburguerStandardColor,
                 top: checked ? 0 : buttonSize[props.buttonSize]?.hamburguerBeforeAfterPosition || standardButtonSize.hamburguerBeforeAfterPosition,
                 transform: checked ? `rotate(${-90 - 180 * ((props.rotationIntensity || rotationStandardIntensity) - 1)}deg)` : '',
@@ -172,8 +183,8 @@ const LancelotHamburguerButton = (props) => {
     }
 
     return (
-        <div onClick={clickHandler} className={[classes.Menu, css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
-            <span className={[classes.Hamburguer, css(styles.hamburguer)].join(' ')}></span>
+        <div onClick={clickHandler} style={{borderRadius: "50%"}} className={[css(styles.background), css(styles.size), css(!props.disableHoverEffect && styles.hoverEffect)].join(' ')}>
+            <span style={{display: 'block', position: 'relative'}} className={[css(styles.hamburguer)].join(' ')}></span>
         </div>
     )
 }
